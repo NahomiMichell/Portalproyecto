@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="super-csv-joda">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Desktop/super-csv-joda" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Desktop/super-csv-joda" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Desktop/super-csv-joda" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Desktop/super-csv-joda" recursive="false" type="SOURCES" />
+  </library>
+</component>

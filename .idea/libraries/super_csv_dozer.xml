@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="super-csv-dozer">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Desktop/super-csv-dozer" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Desktop/super-csv-dozer" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Desktop/super-csv-dozer" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Desktop/super-csv-dozer" recursive="false" type="SOURCES" />
+  </library>
+</component>
