@@ -1,5 +1,8 @@
 package com.company.alumnos;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class AlumnosView {
@@ -12,22 +15,15 @@ public class AlumnosView {
         System.out.println("5. Eliminar un alumno");
     }
 
-    void pedirNombre(){
-        System.out.println("ingrese el Nombre");
-    }
 
-    void pedirAnimalFavorito(){
-        System.out.println("ingrese animal favorito");
-    }
-
-    void verLista(ArrayList<Alumnos> alumnos){
+    void verLista (ArrayList<Alumnos> alumnos){
         System.out.println("\t\tAlumnos:");
-        System.out.println("#,\tnombre, \tanimalFavorito");
+        System.out.println("#,\tnombre, \tcuenta,\tclase");
         int i = 1;
-        for (Alumnos alumno : alumnos){
-            System.out.println(""+(i++)+"\t"+alumno);
+        for (Alumnos alumno : alumnos) {
+            System.out.println("" + (i++) + "\t" + alumno);
         }
     }
 
+    }
 
-}

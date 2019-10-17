@@ -1,6 +1,10 @@
 package com.company.alumnos;
 
 import com.company.lector.LectorDeTeclado;
+import org.supercsv.io.CsvBeanWriter;
+import org.supercsv.prefs.CsvPreference;
+
+import java.util.ArrayList;
 
 public class AlumnosController {
     AlumnosView av = new AlumnosView();
@@ -9,8 +13,9 @@ public class AlumnosController {
     int opcion;
 
     public void presentarListaAlumnos(){
-        av.MenuAlumnos();
+        av.verLista(am.getAlumnos());
     }
+
 
     public int Leeropcion() {
         opcion = LDT.getInteger("Ingrese una opción", "Ingreso una opción no valida. Intente de nuevo");
@@ -20,19 +25,28 @@ public class AlumnosController {
    public int ObtenerResultado(int opcion){
         switch (opcion){
             case 1:{
-
+              presentarListaAlumnos();
             }
             break;
             case 2:{
-                av.pedirNombre();
-                String nombre = LDT.getString("Ingrese el nombre del alumno", "Ups, error. vuelva a intentar");
-                String cuenta = LDT.getString("Ingrese el numero de cuenta", "ups, error. Vuelva a intentar");
-                String clase = LDT.getString("Ingrese la clase", "Ups, porfavor vuelva a intentar");
+                String nombre = obtenernombre();
+                String cuenta = obtenerCuenta();
+                String clase = obtenerClase();
                 am.createAlumno(nombre,cuenta,clase);
+
             }
             break;
             case 3:{
 
+            }
+            break;
+            case 4 :{
+                
+            }
+            break;
+            case 5:{
+                int posicion = obtenerPosicicon();
+                am.deleteAlumno(posicion);
             }
             default:
             {
@@ -42,6 +56,17 @@ public class AlumnosController {
         return opcion;
     }
 
-
+    private String obtenernombre() {
+        return LDT.getString("Ingrese el nombre","Ups, vuelva a intentar");
+    }
+    private String obtenerCuenta(){
+        return LDT.getString("Ingrese su cuenta","Ups, vuelva a intentar");
+    }
+    private String obtenerClase(){
+        return LDT.getString("Ingrese el clase", "Ups, vuelva a intentar");
+    }
+    private int obtenerPosicicon(){
+        return LDT.getInteger("Ingrese la posicion del alumno que desea remover", "Ups, vuelva a intentar");
+    }
 }
 

@@ -3,12 +3,11 @@ package com.company.alumnos;
 import org.supercsv.cellprocessor.constraint.NotNull;
 import org.supercsv.cellprocessor.ift.CellProcessor;
 import org.supercsv.io.CsvBeanReader;
+import org.supercsv.io.CsvBeanWriter;
+import org.supercsv.io.ICsvBeanWriter;
 import org.supercsv.prefs.CsvPreference;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class AlumnosModel {
@@ -18,7 +17,7 @@ public class AlumnosModel {
         return alumnos;
     }
 
-    public AlumnosModel(){
+    AlumnosModel(){
         alumnos = new ArrayList<>();
         try {
             leerArchivo();
@@ -36,12 +35,13 @@ public class AlumnosModel {
 
         final String[] header = beanReader.getHeader(true);
         final CellProcessor[] processors = new CellProcessor[] {
-                new NotNull(), // name
+                new NotNull(), // nombre
                 new NotNull(), // cuenta
                 new NotNull(), // clase
         };
 
         Alumnos alumno = null;
+
         while ((alumno = beanReader.read(Alumnos.class,header,processors))
                 != null){
             alumnos.add(alumno);
@@ -53,7 +53,7 @@ public class AlumnosModel {
     }
 
     public void createAlumno(String nombre, String cuenta, String clase){
-        alumnos.add(new Alumnos(nombre,cuenta, clase));
+        alumnos.add(new Alumnos(nombre,cuenta,clase));
     }
 
     public void updateAlumno(int index,String nombre,String cuenta, String clase){
@@ -69,10 +69,13 @@ public class AlumnosModel {
     }
 
     public void deleteAlumno(int index){
-
+       alumnos.remove(index);
     }
 
     public void persist(){
 
     }
-    }
+
+
+
+}

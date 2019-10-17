@@ -60,17 +60,16 @@ public class LectorDeTeclado {
     }
     public String getString (String mensaje, String reintento){
         System.out.println(mensaje);
-        while(sc.hasNext()){
+        while(!sc.hasNext()){
             System.out.println(reintento);
-            sc.hasNextLine();
+            sc.hasNext();
         }
         return sc.next();
     }
-    public String getString (String reintento){
-        while(!sc.hasNext()){
-            System.out.println(reintento);
-            sc.nextLine();
-        }
-        return sc.next();
-}
+    public String getString(String mensaje) {
+        System.out.println(mensaje);
+        String cadena = sc.next();
+        return cadena;
+
+    }
 }

@@ -6,9 +6,11 @@ public class Alumnos {
     private String clase;
 
     public Alumnos(String nombre, String cuenta, String clase) {
+        this.nombre = nombre;
+        this.cuenta = cuenta;
+        this.clase = clase;
     }
     public Alumnos (){
-
     }
 
 
@@ -36,11 +38,8 @@ public class Alumnos {
         this.clase = clase;
     }
 
-    public String toString() {
-        return "Alumnos{" +
-                "nombre='" + nombre + '\'' +
-                ", cuenta='" + cuenta + '\'' +
-                ", clase='" + clase + '\'' +
-                '}';
+    public String toString(){
+        return nombre+",\t"+cuenta+",\t"+clase;
     }
 }
+
