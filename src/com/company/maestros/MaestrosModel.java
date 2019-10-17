@@ -28,7 +28,7 @@ public class MaestrosModel {
 
     }
     private void  leerArchivo() throws IOException {
-        File file = new File("Control.csv");
+        File file = new File("");
         FileReader fileReader = new FileReader(file);
 
         CsvPreference.Builder builder = new CsvPreference.Builder('\'',',',"\n");

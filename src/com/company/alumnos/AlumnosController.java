@@ -7,10 +7,15 @@ import org.supercsv.prefs.CsvPreference;
 import java.util.ArrayList;
 
 public class AlumnosController {
-    AlumnosView av = new AlumnosView();
-    AlumnosModel am = new AlumnosModel();
+   private AlumnosView av;
+   private AlumnosModel am;
     LectorDeTeclado LDT = new LectorDeTeclado();
     int opcion;
+
+    public AlumnosController(){
+        av = new AlumnosView();
+        am= new AlumnosModel();
+    }
 
     public void presentarListaAlumnos(){
         av.verLista(am.getAlumnos());
@@ -33,6 +38,7 @@ public class AlumnosController {
                 String cuenta = obtenerCuenta();
                 String clase = obtenerClase();
                 am.createAlumno(nombre,cuenta,clase);
+                presentarListaAlumnos();
 
             }
             break;
