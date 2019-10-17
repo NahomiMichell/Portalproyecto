@@ -3,12 +3,18 @@ package com.company.maestros;
 import com.company.lector.LectorDeTeclado;
 
 public class MaestrosController {
-    MaestrosView mv = new MaestrosView();
-    MaestrosModel mm = new MaestrosModel();
     LectorDeTeclado LDT = new LectorDeTeclado();
     int opcion;
+    private MaestrosView mv;
+    private MaestrosModel mm;
 
-    public void presentarListaAlumnos(){
+
+    public MaestrosController(){
+        mv = new MaestrosView();
+        mm= new MaestrosModel();
+    }
+
+    public void presentarListaMaestros(){
         mv.verLista(mm.getMaestros());
     }
 
@@ -21,13 +27,14 @@ public class MaestrosController {
     public int ObtenerResultado(int opcion){
         switch (opcion){
             case 1:{
-                presentarListaAlumnos();
+                presentarListaMaestros();
             }
             break;
             case 2:{
                 String nombre = obtenernombre();
                 String clase = obtenerClase();
                 mm.createMaestro(nombre,clase);
+                System.out.println("Se agrego con exito el maestro.");
 
             }
             break;
@@ -42,6 +49,7 @@ public class MaestrosController {
             case 5:{
                 int posicion = obtenerPosicicon();
                 mm.deleteMestro(posicion);
+                System.out.println("Se elimino con exito");
             }
             default:
             {

@@ -38,20 +38,26 @@ public class AlumnosController {
                 String cuenta = obtenerCuenta();
                 String clase = obtenerClase();
                 am.createAlumno(nombre,cuenta,clase);
-                presentarListaAlumnos();
+                System.out.println("Se agrego con exito el alumno.");
 
             }
             break;
             case 3:{
-
+               int posicion = obtenerPosicionModificar();
+               String nombre = obtenernombre();
+               String cuenta = obtenerCuenta();
+               String clase = obtenerClase();
+               am.updateAlumno(posicion,nombre,cuenta,clase);
+                System.out.println("Se modifico con exito el alumno");
             }
             break;
             case 4 :{
-
+                int posicion = obtenerPosicionLeer();
+                am.readAlumno(posicion);
             }
             break;
             case 5:{
-                int posicion = obtenerPosicicon();
+                int posicion = obtenerPosiciconRemover();
                 am.deleteAlumno(posicion);
             }
             default:
@@ -61,7 +67,6 @@ public class AlumnosController {
         }
         return opcion;
     }
-
     private String obtenernombre() {
         return LDT.getString("Ingrese el nombre","Ups, vuelva a intentar");
     }
@@ -71,8 +76,14 @@ public class AlumnosController {
     private String obtenerClase(){
         return LDT.getString("Ingrese el clase", "Ups, vuelva a intentar");
     }
-    private int obtenerPosicicon(){
+    private int obtenerPosiciconRemover(){
         return LDT.getInteger("Ingrese la posicion del alumno que desea remover", "Ups, vuelva a intentar");
+    }
+    private int obtenerPosicionModificar(){
+        return LDT.getInteger("Ingrese la posición del alumno que desea modificar","Ups, vuelva a intentar");
+    }
+    private int obtenerPosicionLeer(){
+        return LDT.getInteger("Ingrese la posicion del alumno que desea leer","Ups, vuelva a intentar");
     }
 }
 

@@ -3,12 +3,12 @@ package com.company.alumnos;
 import org.supercsv.cellprocessor.constraint.NotNull;
 import org.supercsv.cellprocessor.ift.CellProcessor;
 import org.supercsv.io.CsvBeanReader;
-import org.supercsv.io.CsvBeanWriter;
-import org.supercsv.io.ICsvBeanWriter;
 import org.supercsv.prefs.CsvPreference;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class AlumnosModel {
     private ArrayList<Alumnos> alumnos;
@@ -59,21 +59,24 @@ public class AlumnosModel {
         alumnos.add(new Alumnos(nombre,cuenta,clase));
     }
 
-    public void updateAlumno(int index,String nombre,String cuenta, String clase){
-
+    public void updateAlumno(int index,String nombre,String cuenta,String clase){
+         alumnos.add(index,new Alumnos(nombre,cuenta,clase));
     }
 
     public ArrayList<Alumnos> readAlumos(int start, int end){
-        return null;
+        ArrayList<Alumnos> alumnos = new ArrayList<>();
+        start = 0;
+
+    return alumnos;
     }
 
     public Alumnos readAlumno(int index){
+
         return null;
     }
 
-    public void deleteAlumno(int index){
-       alumnos.remove(index);
-    }
+    public void deleteAlumno(int index){ alumnos.remove(index); }
+
 
     public void persist(){
 
