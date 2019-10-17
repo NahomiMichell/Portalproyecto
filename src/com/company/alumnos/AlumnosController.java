@@ -18,7 +18,7 @@ public class AlumnosController {
 
 
     public int Leeropcion() {
-        opcion = LDT.getInteger("Ingrese una opción", "Ingreso una opción no valida. Intente de nuevo");
+        opcion = LDT.getInteger("Ingrese una opción", "Ups, opcion no valida. Intente de nuevo");
         return opcion;
     }
 
@@ -41,7 +41,7 @@ public class AlumnosController {
             }
             break;
             case 4 :{
-                
+
             }
             break;
             case 5:{

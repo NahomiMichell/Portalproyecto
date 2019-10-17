@@ -51,6 +51,9 @@ public class AlumnosModel {
         fileReader.close();
         file = null;
     }
+    private void AgregarDatos (File archivo, ArrayList<Alumnos> alumnos) throws IOException {
+
+    }
 
     public void createAlumno(String nombre, String cuenta, String clase){
         alumnos.add(new Alumnos(nombre,cuenta,clase));
