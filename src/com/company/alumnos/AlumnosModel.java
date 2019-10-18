@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class AlumnosModel {
+    AlumnosView av = new AlumnosView();
     private ArrayList<Alumnos> alumnos;
 
     public ArrayList<Alumnos> getAlumnos(){
@@ -59,15 +60,15 @@ public class AlumnosModel {
         alumnos.add(new Alumnos(nombre,cuenta,clase));
     }
 
-    public void updateAlumno(int index,String nombre,String cuenta,String clase){
-         alumnos.add(index,new Alumnos(nombre,cuenta,clase));
+    public void updateAlumno(int index, String nombre, String cuenta, String clase) {
+        alumnos.set(index, new Alumnos(nombre,cuenta,clase));
     }
 
     public ArrayList<Alumnos> readAlumos(int start, int end){
-        ArrayList<Alumnos> alumnos = new ArrayList<>();
-        start = 0;
-
-    return alumnos;
+        for (int i = start; i < end ; i++) {
+            System.out.println(alumnos.get(i));  
+        }
+    return null;
     }
 
     public Alumnos readAlumno(int index){
@@ -81,7 +82,5 @@ public class AlumnosModel {
     public void persist(){
 
     }
-
-
 
 }

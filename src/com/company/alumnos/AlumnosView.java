@@ -24,6 +24,19 @@ public class AlumnosView {
             System.out.println("" + (i++) + "\t" + alumno);
         }
     }
+    public void pedirnombre(){
+        System.out.println("Ingrese su nombre");
+    }
+    public void pedircuenta(){
+        System.out.println("Ingrese su cuenta");
+    }
+    public void pedirclase(){
+        System.out.println("Ingrese su clase");
+    }
+    public void pedirposicion(){
+        System.out.println("Ingrese su posicion");
+    }
+
 
     }
 

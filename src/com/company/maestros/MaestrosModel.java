@@ -55,6 +55,9 @@ public class MaestrosModel {
     public void createMaestro(String nombre, String clase){
         maestros.add(new Maestros(nombre, clase));
     }
+    public void updateMaestro(int index, String nombre, String clase){
+        maestros.set(index, new Maestros(nombre,clase));
+    }
     public void deleteMestro (int index){
         maestros.remove(index);
     }

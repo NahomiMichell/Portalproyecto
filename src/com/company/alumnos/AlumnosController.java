@@ -43,11 +43,16 @@ public class AlumnosController {
             }
             break;
             case 3:{
-               int posicion = obtenerPosicionModificar();
-               String nombre = obtenernombre();
-               String cuenta = obtenerCuenta();
-               String clase = obtenerClase();
+                av.pedirposicion();
+                int posicion = obtenerPosicionModificar();
+                av.pedirnombre();
+                String nombre = obtenernombre();
+                av.pedircuenta();
+                String cuenta = obtenerCuenta();
+                av.pedirclase();
+                String clase = obtenerClase();
                am.updateAlumno(posicion,nombre,cuenta,clase);
+                presentarListaAlumnos();
                 System.out.println("Se modifico con exito el alumno");
             }
             break;
@@ -68,22 +73,16 @@ public class AlumnosController {
         return opcion;
     }
     private String obtenernombre() {
-        return LDT.getString("Ingrese el nombre","Ups, vuelva a intentar");
+        return LDT.getString("Ups, vuelva a intentar");
     }
     private String obtenerCuenta(){
-        return LDT.getString("Ingrese su cuenta","Ups, vuelva a intentar");
+        return LDT.getString("Ups, vuelva a intentar");
     }
     private String obtenerClase(){
-        return LDT.getString("Ingrese el clase", "Ups, vuelva a intentar");
+        return LDT.getString( "Ups, vuelva a intentar");
     }
-    private int obtenerPosiciconRemover(){
-        return LDT.getInteger("Ingrese la posicion del alumno que desea remover", "Ups, vuelva a intentar");
-    }
-    private int obtenerPosicionModificar(){
-        return LDT.getInteger("Ingrese la posición del alumno que desea modificar","Ups, vuelva a intentar");
-    }
-    private int obtenerPosicionLeer(){
-        return LDT.getInteger("Ingrese la posicion del alumno que desea leer","Ups, vuelva a intentar");
-    }
+    private int obtenerPosiciconRemover(){ return LDT.getInteger( "Ups, vuelva a intentar"); }
+    private int obtenerPosicionModificar(){ return LDT.getInteger("Ups, vuelva a intentar"); }
+    private int obtenerPosicionLeer(){ return LDT.getInteger("Ups, vuelva a intentar"); }
 }
 

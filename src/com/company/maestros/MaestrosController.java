@@ -39,7 +39,14 @@ public class MaestrosController {
             }
             break;
             case 3:{
-
+               mv.pedirposicion();
+               int posicion = obtenerPosicicon();
+               mv.pedirnombre();
+               String nombre = obtenernombre();
+               mv.pedirclase();
+               String clase = obtenerClase();
+               mm.updateMaestro(posicion,nombre,clase);
+                System.out.println("Se modifico ");
             }
             break;
             case 4 :{
@@ -60,12 +67,12 @@ public class MaestrosController {
     }
 
     private String obtenernombre() {
-        return LDT.getString("Ingrese el nombre","Ups, vuelva a intentar");
+        return LDT.getString("Ups, vuelva a intentar");
     }
     private String obtenerClase(){
-        return LDT.getString("Ingrese el clase", "Ups, vuelva a intentar");
+        return LDT.getString( "Ups, vuelva a intentar");
     }
     private int obtenerPosicicon(){
-        return LDT.getInteger("Ingrese la posicion del alumno que desea remover", "Ups, vuelva a intentar");
+        return LDT.getInteger("Ups, vuelva a intentar");
     }
 }

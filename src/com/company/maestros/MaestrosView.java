@@ -20,4 +20,14 @@ public class MaestrosView {
             System.out.println("" + (i++) + "\t" + maestro);
         }
     }
+    public void pedirnombre(){
+        System.out.println("Ingrese su nombre");
+    }
+
+    public void pedirclase(){
+        System.out.println("Ingrese su clase");
+    }
+    public void pedirposicion(){
+        System.out.println("Ingrese su posicion");
+    }
 }

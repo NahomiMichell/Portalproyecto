@@ -9,11 +9,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        AlumnosView av = new AlumnosView();
-       AlumnosController ac = new AlumnosController();
-        av.MenuAlumnos();
-        ac.ObtenerResultado(ac.Leeropcion());
-        ac.presentarListaAlumnos();
-
+       MenuPrincipal mp = new MenuPrincipal();
+       mp.MenuPrincipal();
+        System.out.println();
+       mp.ObtenerRedultadoP(mp.Leeropcion());
     }
 }
