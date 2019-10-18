@@ -6,6 +6,7 @@ import org.supercsv.io.CsvBeanReader;
 import org.supercsv.prefs.CsvPreference;
 import org.w3c.dom.ls.LSOutput;
 
+import javax.management.modelmbean.InvalidTargetObjectTypeException;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -57,8 +58,8 @@ public class AlumnosModel {
     }
 
     public void createAlumno(String nombre, String cuenta, String clase){
-        alumnos.add(new Alumnos(nombre,cuenta,clase));
-    }
+            alumnos.add(new Alumnos(nombre,cuenta,clase));
+        }
 
     public void updateAlumno(int index, String nombre, String cuenta, String clase) {
         alumnos.set(index, new Alumnos(nombre,cuenta,clase));

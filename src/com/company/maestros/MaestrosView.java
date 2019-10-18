@@ -14,7 +14,7 @@ public class MaestrosView {
 
     void verLista (ArrayList<Maestros> maestros){
         System.out.println("\t\tMaestro:");
-        System.out.println("#,\tnombre, \tclase");
+        System.out.println("#,\tcargo, \tnombre");
         int i = 1;
         for (Maestros maestro : maestros) {
             System.out.println("" + (i++) + "\t" + maestro);
@@ -23,10 +23,7 @@ public class MaestrosView {
     public void pedirnombre(){
         System.out.println("Ingrese su nombre");
     }
-
-    public void pedirclase(){
-        System.out.println("Ingrese su clase");
-    }
+    public void pedircargo(){ System.out.println("Ingrese su cargo"); }
     public void pedirposicion(){
         System.out.println("Ingrese su posicion");
     }

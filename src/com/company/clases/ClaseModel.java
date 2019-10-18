@@ -1,5 +1,7 @@
 package com.company.clases;
 
+import com.company.alumnos.Alumnos;
+import com.company.maestros.Maestros;
 import org.supercsv.cellprocessor.constraint.NotNull;
 import org.supercsv.cellprocessor.ift.CellProcessor;
 import org.supercsv.io.CsvBeanReader;
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 
 public class ClaseModel {
     private ArrayList<Clase> clases;
+    private  ArrayList<Alumnos> alumnos;
 
     public ArrayList<Clase> getClase(){
         return clases;
@@ -59,8 +62,15 @@ public class ClaseModel {
     public void readClase (int index){
         System.out.println(clases.get(index));
     }
-    public void asignarMaestro(String clase, String horario, String Maestro){
-        
+    public void asignarMaestro(Maestros maestro, String clase){
+        System.out.println("Proximamente va a estar esta caracteristica, espere la actualización.");
+        System.out.println("Esperamos entienda. Si tiene alguna duda no dude en comunicarse con nosotros");
+        System.out.println("Numero de atención al cliente: +504 31766885");
+    }
+    public void agregarAlumnoClase(Alumnos alumno, String clase){
+        System.out.println("Proximamente va a estar esta caracteristica, espere la actualización.");
+        System.out.println("Esperamos entienda. Si tiene alguna duda no dude en comunicarse con nosotros");
+        System.out.println("Numero de atención al cliente: +504 31766885");
     }
     public void deleteClase (int index){
         clases.remove(index);

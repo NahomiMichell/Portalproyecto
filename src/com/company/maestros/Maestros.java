@@ -1,15 +1,14 @@
 package com.company.maestros;
 
 public class Maestros {
+    private String cargo;
     private String nombre;
-    private String clase;
 
-    public Maestros (String nombre,String clase){
+    public Maestros (String cargo, String nombre){
+        this.cargo = cargo;
         this.nombre = nombre;
-        this.clase = clase;
     }
     public Maestros (){
-
     }
 
     public String getNombre() {
@@ -20,14 +19,14 @@ public class Maestros {
         this.nombre = nombre;
     }
 
-    public String getClase() {
-        return clase;
+    public String getCargo() {
+        return cargo;
     }
 
-    public void setClase(String clase) {
-        this.clase = clase;
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
     public String toString(){
-        return nombre+",\t"+clase;
+        return nombre+",\t"+cargo;
     }
 }

@@ -1,5 +1,5 @@
-nombre,cuenta,clase,
-'Rafa','20181101','Ingles',
+nombre,cuenta,clase
+'Rafa','20181101','Ingles'
 'Raul','20181102','Biologia'
 'Celeste','20181103','Hidrologia'
 'Marina','20181104','Astrologia'
@@ -9,5 +9,15 @@ nombre,cuenta,clase,
 'Jorge','20181108','Biologia'
 'Pedro','20181109','Ingles'
 'Luna','20181201','Composicion de alimentos'
-
-
+'Edgardo','20181202','Hidrologia'
+'Daniel','20181203','Quimica'
+'Valentina','20181204','Ingles'
+'Catalina','20181205','Composicion de alimentos'
+'Antonella','20181206','Astrologia'
+'Will','20181207','Contabilidad'
+'Michael','20181208','Astrologia'
+'Merve','20181209','Biologia'
+'Diego','20181301','Ingles'
+'Marco','20181302','Composicion de alimentos'
+'Ximena','20181303','Quimica'
+'William','20181304','Contabilidad'

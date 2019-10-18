@@ -31,9 +31,9 @@ public class MaestrosController {
             }
             break;
             case 2:{
+                String cargo = obtenerCargo();
                 String nombre = obtenernombre();
-                String clase = obtenerClase();
-                mm.createMaestro(nombre,clase);
+                mm.createMaestro(cargo,nombre);
                 System.out.println("Se agrego con exito el maestro.");
 
             }
@@ -41,22 +41,24 @@ public class MaestrosController {
             case 3:{
                mv.pedirposicion();
                int posicion = obtenerPosicicon();
+                mv.pedircargo();
+                String cargo = obtenerCargo();
                mv.pedirnombre();
                String nombre = obtenernombre();
-               mv.pedirclase();
-               String clase = obtenerClase();
-               mm.updateMaestro(posicion,nombre,clase);
-                System.out.println("Se modifico ");
+               mm.updateMaestro(posicion,cargo,nombre);
+                System.out.println("Se modifico exitosamente el maestro.");
             }
             break;
             case 4 :{
-
+               mv.pedirposicion();
+               int posicion = obtenerPosicicon();
+               mm.readMaestro(posicion);
             }
             break;
             case 5:{
                 int posicion = obtenerPosicicon();
                 mm.deleteMestro(posicion);
-                System.out.println("Se elimino con exito");
+                System.out.println("Se elimino con exito.");
             }
             default:
             {
@@ -69,7 +71,7 @@ public class MaestrosController {
     private String obtenernombre() {
         return LDT.getString("Ups, vuelva a intentar");
     }
-    private String obtenerClase(){
+    private String obtenerCargo(){
         return LDT.getString( "Ups, vuelva a intentar");
     }
     private int obtenerPosicicon(){

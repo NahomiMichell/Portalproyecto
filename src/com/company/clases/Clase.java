@@ -5,6 +5,7 @@ public class Clase {
 private String clase;
 private String horario;
 
+
     public Clase(String clase, String horario) {
         this.clase = clase;
         this.horario = horario;

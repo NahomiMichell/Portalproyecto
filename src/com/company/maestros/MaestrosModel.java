@@ -28,7 +28,7 @@ public class MaestrosModel {
 
     }
     private void  leerArchivo() throws IOException {
-        File file = new File("");
+        File file = new File("Lista_1.csv");
         FileReader fileReader = new FileReader(file);
 
         CsvPreference.Builder builder = new CsvPreference.Builder('\'',',',"\n");
@@ -36,9 +36,8 @@ public class MaestrosModel {
 
         final String[] header = beanReader.getHeader(true);
         final CellProcessor[] processors = new CellProcessor[] {
+                new NotNull(), // cargo
                 new NotNull(), // nombre
-                new NotNull(), // cuenta
-                new NotNull(), // clase
         };
 
         Maestros maestro = null;
@@ -52,11 +51,11 @@ public class MaestrosModel {
         fileReader.close();
         file = null;
     }
-    public void createMaestro(String nombre, String clase){
-        maestros.add(new Maestros(nombre, clase));
+    public void createMaestro(String cargo, String nombre){
+        maestros.add(new Maestros(cargo, nombre));
     }
-    public void updateMaestro(int index, String nombre, String clase){
-        maestros.set(index, new Maestros(nombre,clase));
+    public void updateMaestro(int index, String cargo, String nombre){
+        maestros.set(index, new Maestros(cargo,nombre));
     }
     public void readMaestro (int index){
         System.out.println(maestros.get(index));
