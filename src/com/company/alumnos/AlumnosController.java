@@ -57,6 +57,7 @@ public class AlumnosController {
             }
             break;
             case 4 :{
+                av.pedirposicion();
                 int posicion = obtenerPosicionLeer();
                 am.readAlumno(posicion);
             }

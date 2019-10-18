@@ -1,5 +1,5 @@
-nombre,cuenta,clase
-'Rafa','20181101','Ingles'
+nombre,cuenta,clase,
+'Rafa','20181101','Ingles',
 'Raul','20181102','Biologia'
 'Celeste','20181103','Hidrologia'
 'Marina','20181104','Astrologia'
@@ -9,4 +9,5 @@ nombre,cuenta,clase
 'Jorge','20181108','Biologia'
 'Pedro','20181109','Ingles'
 'Luna','20181201','Composicion de alimentos'
+
 

@@ -66,14 +66,13 @@ public class AlumnosModel {
 
     public ArrayList<Alumnos> readAlumos(int start, int end){
         for (int i = start; i < end ; i++) {
-            System.out.println(alumnos.get(i));  
+            System.out.println(alumnos.get(i));
         }
     return null;
     }
 
-    public Alumnos readAlumno(int index){
-
-        return null;
+    public void readAlumno(int index){
+        System.out.println(alumnos.get(index));
     }
 
     public void deleteAlumno(int index){ alumnos.remove(index); }

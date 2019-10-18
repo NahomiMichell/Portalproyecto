@@ -1,6 +1,5 @@
-package com.company.maestros;
+package com.company.clases;
 
-import com.company.alumnos.Alumnos;
 import org.supercsv.cellprocessor.constraint.NotNull;
 import org.supercsv.cellprocessor.ift.CellProcessor;
 import org.supercsv.io.CsvBeanReader;
@@ -11,15 +10,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class MaestrosModel {
-    private ArrayList<Maestros> maestros;
+public class ClaseModel {
+    private ArrayList<Clase> clases;
 
-    public ArrayList<Maestros> getMaestros(){
-        return maestros;
+    public ArrayList<Clase> getClase(){
+        return clases;
     }
 
-    MaestrosModel(){
-        maestros = new ArrayList<>();
+    ClaseModel(){
+        clases = new ArrayList<>();
         try {
             leerArchivo();
         } catch (IOException e) {
@@ -28,7 +27,7 @@ public class MaestrosModel {
 
     }
     private void  leerArchivo() throws IOException {
-        File file = new File("");
+        File file = new File("Lista.csv");
         FileReader fileReader = new FileReader(file);
 
         CsvPreference.Builder builder = new CsvPreference.Builder('\'',',',"\n");
@@ -36,32 +35,35 @@ public class MaestrosModel {
 
         final String[] header = beanReader.getHeader(true);
         final CellProcessor[] processors = new CellProcessor[] {
-                new NotNull(), // nombre
-                new NotNull(), // cuenta
                 new NotNull(), // clase
+                new NotNull(), // horario
         };
 
-        Maestros maestro = null;
+        Clase clase = null;
 
-        while ((maestro = beanReader.read(Maestros.class,header,processors))
+        while ((clase = beanReader.read(Clase.class,header,processors))
                 != null){
-            maestros.add(maestro);
+            clases.add(clase);
         }
 
         beanReader.close();
         fileReader.close();
         file = null;
     }
-    public void createMaestro(String nombre, String clase){
-        maestros.add(new Maestros(nombre, clase));
+    public void createClase(String clase, String horario){
+        clases.add(new Clase(clase,horario));
     }
-    public void updateMaestro(int index, String nombre, String clase){
-        maestros.set(index, new Maestros(nombre,clase));
+    public void updateClase(int index, String clase, String horario){
+        clases.set(index, new Clase(clase,horario));
     }
-    public void readMaestro (int index){
-        System.out.println(maestros.get(index));
+    public void readClase (int index){
+        System.out.println(clases.get(index));
     }
-    public void deleteMestro (int index){
-        maestros.remove(index);
+    public void asignarMaestro(String clase, String horario, String Maestro){
+        
+    }
+    public void deleteClase (int index){
+        clases.remove(index);
     }
 }
+
