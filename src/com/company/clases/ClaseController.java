@@ -56,11 +56,11 @@ public class ClaseController {
             }
             break;
             case 5:{
-
+             cm.agregarAlumnoClase();
             }
             break;
             case 6:{
-
+             cm.asignarMaestro();
             }
             break;
             case 7:{
@@ -75,7 +75,6 @@ public class ClaseController {
         }
         return opcion;
     }
-
     private String obtenerClase() {
         return LDT.getString("Ups, vuelva a intentar");
     }

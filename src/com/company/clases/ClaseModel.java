@@ -62,12 +62,12 @@ public class ClaseModel {
     public void readClase (int index){
         System.out.println(clases.get(index));
     }
-    public void asignarMaestro(Maestros maestro, String clase){
+    public void asignarMaestro(){
         System.out.println("Proximamente va a estar esta caracteristica, espere la actualización.");
         System.out.println("Esperamos entienda. Si tiene alguna duda no dude en comunicarse con nosotros");
         System.out.println("Numero de atención al cliente: +504 31766885");
     }
-    public void agregarAlumnoClase(Alumnos alumno, String clase){
+    public void agregarAlumnoClase(){
         System.out.println("Proximamente va a estar esta caracteristica, espere la actualización.");
         System.out.println("Esperamos entienda. Si tiene alguna duda no dude en comunicarse con nosotros");
         System.out.println("Numero de atención al cliente: +504 31766885");
